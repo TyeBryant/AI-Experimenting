@@ -20,6 +20,7 @@ public class PathFind : MonoBehaviour {
     Rigidbody cubeRB;
 
     int m_positionIndex = 0;
+    int jumpForce = 5;
 
     // Use this for initialization
     void Start ()
@@ -86,7 +87,7 @@ public class PathFind : MonoBehaviour {
 
                         Vector3 adjacentNodePos = smallestFNode.position + new Vector3(ox, oy, oz);
 
-                        int nodeResultsSize = Physics.BoxCastNonAlloc(adjacentNodePos, new Vector3(0.5f, 0.5f, 0.5f), Vector3.forward, nodeResults, Quaternion.identity, 1f);
+                        int nodeResultsSize = Physics.BoxCastNonAlloc(adjacentNodePos, new Vector3(0.49f, 0.49f, 0.49f), Vector3.forward, nodeResults, Quaternion.identity, 1f);
                         if (nodeResultsSize > 0)
                         {
                             Debug.Log(nodeResultsSize);
